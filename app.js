@@ -1,7 +1,7 @@
 var flashApp = angular.module('flash', []);
  flashApp.controller('CardController',function ($scope) {
    $scope.cards = [
-    { front:"What's red and invisible?",
+    { front:"Red and invisible?",
       back:"No tomatoes"
     },
     { front:"beep",
@@ -10,5 +10,5 @@ var flashApp = angular.module('flash', []);
     { front:"full frontal",
       back:"back end"
     }
-   ];
+  ];
  });
