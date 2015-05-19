@@ -11,4 +11,8 @@ var flashApp = angular.module('flash', []);
       back:"back end"
     }
   ];
+  $scope.current = 0;
+  $scope.nextCard = function() {
+    $scope.current = ($scope.current+1) % ($scope.cards.length);
+  };
  });

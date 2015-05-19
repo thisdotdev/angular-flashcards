@@ -9,10 +9,11 @@
 </head>
 <body>
 <section ng-controller="CardController">
-  <div ng-repeat="card in cards" class="card">
-    <p>{{ card.front }}</p>
-    <p>{{ card.back }}</p>
+  <div class="card">
+    <p>{{ cards[current].front }}</p>
+    <p>{{ cards[current].back }}</p>
   </div>
+  <button ng-click="nextCard()">next</button>
 </section>
 {{"hello" + " " + "world"}}
 <script src="./app.js"></script>
