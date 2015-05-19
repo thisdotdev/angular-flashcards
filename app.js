@@ -11,4 +11,8 @@ flashApp.controller("CardController", function ($scope) {
       back: "this is the back"
     }
   ];
+  $scope.current = 0;
+  $scope.nextCard = function(){
+    $scope.current = ($scope.current+1) % ($scope.cards.length);
+  };
 });
