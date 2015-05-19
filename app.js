@@ -11,8 +11,15 @@ var flashApp = angular.module('flash', []);
       back:"back end"
     }
   ];
-  $scope.current = 0;
-  $scope.nextCard = function() {
-    $scope.current = ($scope.current+1) % ($scope.cards.length);
+  $scope.current = 0; // card to display
+  $scope.front = true;
+
+  $scope.next = function() {
+    var move = +($scope.front); //change cards if on front (true or or false coerced to 0 or 1 by adding + before)
+    var numCards = $scope.cards.length;
+
+    $scope.current = ($scope.current + move) % (numCards);
+    $scope.front = !$scope.front;
   };
+
  });
