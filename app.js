@@ -16,10 +16,18 @@ flashApp.controller("CardController", function ($scope) {
   $scope.front = true;
 
   $scope.next = function(){
-    var move = +(!$scope.front); // change cards if on back
-    var numCards = $scope.cards.length;
+    var step = +(!$scope.front); // change cards if on back
+    $scope.move(step);
+  };
 
-    $scope.current = ($scope.current + move) % numCards;
+  $scope.back = function(){
+    var step = -($scope.front); // change cards if on front
+    $scope.move(step);
+  };
+
+  $scope.move = function(step){ // step is 0,1,-1
+    var numCards = $scope.cards.length;
+    $scope.current = ($scope.current + step + numCards) % numCards;
     $scope.front = !$scope.front;
   };
 
