@@ -31,4 +31,11 @@ flashApp.controller("CardController", function ($scope) {
     $scope.front = !$scope.front;
   };
 
+  $scope.gotIt = function() {
+    if(!$scope.cards.length) return;
+    $scope.front = true;
+    $scope.cards.splice($scope.current, 1);
+    $scope.current = $scope.current % $scope.cards.length;
+  };
+
 });
