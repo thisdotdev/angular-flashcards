@@ -1,14 +1,14 @@
 var flashApp = angular.module('flash', []);
  flashApp.controller('CardController',function ($scope) {
    $scope.cards = [
-    { front:"Red and invisible?",
-      back:"No tomatoes"
+    { front:"1 Red and invisible?",
+      back:"2 No tomatoes"
     },
-    { front:"beep",
-      back:"boop"
+    { front:"3 beep",
+      back:"4 boop"
     },
-    { front:"full frontal",
-      back:"back end"
+    { front:"5 full frontal",
+      back:"6 back end"
     }
   ];
   $scope.current = 0; // card to display
@@ -28,5 +28,11 @@ var flashApp = angular.module('flash', []);
     var numCards = $scope.cards.length;
     $scope.current = ($scope.current + step + numCards) % numCards;
     $scope.front = !$scope.front;
+  };
+
+  $scope.gotIt = function() { 
+    $scope.front = true;
+    $scope.cards.splice($scope.current,1);
+    $scope.current = $scope.current % $scope.cards.length;
   };
  });
