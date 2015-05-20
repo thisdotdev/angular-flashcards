@@ -9,15 +9,15 @@
 </head>
 <body>
 <section ng-controller="CardController">
-  <div class="card">
+  <div ng-if="cards.length" class="card">
     <p ng-if="front" class="front">{{ cards[current].front }}</p>
     <p ng-if="!front" class="back">{{ cards[current].back }}</p>
   </div>
-  {{ front }}
+  <p ng-if="!cards.length">all gone</p>
   <button ng-click="back()">back</button>
   <button ng-click="next()">next</button>
+  <button ng-click="gotIt()">got it!</button>
 </section>
-{{"hello" + " " + "world"}}
 <script src="./app.js"></script>
 </body>
 </html>
