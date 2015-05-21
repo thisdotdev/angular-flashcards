@@ -1,7 +1,5 @@
 var flashApp = angular.module('flash', []);
-flashApp.controller('DeckController',function() {});
-flashApp.controller('StudyController',function ($scope) {
-
+flashApp.controller('DeckController',function($scope) {
   var allCards = [
     { front:"1 Red and invisible?",
       back:"2 No tomatoes"
@@ -14,8 +12,15 @@ flashApp.controller('StudyController',function ($scope) {
     }
   ];
 
-  function init() { 
-    $scope.cards = [].concat(allCards);
+  $scope.copyDeck = function () {
+    return [].concat(allCards);
+  };
+});
+
+flashApp.controller('StudyController',function ($scope) {
+
+  function init() {
+    $scope.cards = $scope.$parent.copyDeck();
     $scope.front = true;
     $scope.current = 0;
   }
@@ -40,7 +45,7 @@ flashApp.controller('StudyController',function ($scope) {
     $scope.front = !$scope.front;
   };
 
-  $scope.gotIt = function() { 
+  $scope.gotIt = function() {
     $scope.front = true;
     $scope.cards.splice($scope.current,1);
     $scope.current = $scope.current % $scope.cards.length;
