@@ -11,6 +11,12 @@ var flashApp = angular.module('flash', []);
       back:"6 back end"
     }
   ];
+
+  $scope.allCards = [];
+   for(var i = 0; i < $scope.cards.length; i++) {
+    $scope.allCards[i] = $scope.cards[i];
+   }
+
   $scope.current = 0; // card to display
   $scope.front = true;
 
@@ -35,4 +41,12 @@ var flashApp = angular.module('flash', []);
     $scope.cards.splice($scope.current,1);
     $scope.current = $scope.current % $scope.cards.length;
   };
+
+  $scope.reset = function() { 
+    $scope.front = true;
+    $scope.current = 0;
+      for(var i = 0; i < $scope.allCards.length; i++) {
+      $scope.cards[i] = $scope.allCards[i]; 
+    }
+  }; 
  });
