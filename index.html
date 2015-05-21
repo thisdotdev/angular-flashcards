@@ -14,9 +14,11 @@
     <p ng-if="!front" class="back">{{ cards[current].back }}</p>
   </div>
   <p ng-if="!cards.length">No more cards to study, fantstic job! Really!</p>
+  <span ng-if="cards.length">
   <button ng-click="back()">back</button>
   <button ng-click="next()">next</button>
   <button ng-click="gotIt()">got it!</button>
+  </span>
   <button ng-click="reset()">reset</button>
 </section>
 <script src="./app.js"></script>
