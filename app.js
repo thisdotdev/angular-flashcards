@@ -1,4 +1,5 @@
 var flashApp = angular.module("flash", []);
+
 flashApp.controller("DeckController", function ($scope) {
 
   var allCards = [
@@ -54,3 +55,5 @@ flashApp.controller("StudyController", function ($scope) {
   };
 
 });
+
+flashApp.controller("CardsController", function () {});
