@@ -21,6 +21,20 @@
   </span>
   <button ng-click="reset()">reset</button>
 </section>
+
+
+<section ng-controller="CardsController">
+<label for="front">front</label>
+<textarea name="front" ng-model="front"></textarea>
+<label for="back">back</label>
+<textarea name="back" ng-model="back"></textarea>
+<button ng-click="addCard()">add card</button>
+<p>{{front}}</p>
+<p>{{back}}</p>
+<p>{{copyCards}}</p>
+</section>
+
+
 <script src="./app.js"></script>
 </body>
 </html>
