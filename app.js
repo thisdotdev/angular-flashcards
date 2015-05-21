@@ -51,4 +51,7 @@ flashApp.controller('StudyController',function ($scope) {
     $scope.current = $scope.current % $scope.cards.length;
   };
 
+
+  flashApp.controller('StudyController',function () {});
+
  });
