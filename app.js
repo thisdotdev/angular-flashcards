@@ -13,9 +13,15 @@ flashApp.controller("CardController", function ($scope) {
     }
   ];
 
-  $scope.cards = [].concat(allCards);
-  $scope.current = 0; // card to display
-  $scope.front = true;
+  function init() {
+    $scope.cards = [].concat(allCards);
+    $scope.front = true;
+    $scope.current = 0;
+  }
+
+  init();
+
+  $scope.reset = init;
 
   $scope.next = function(){
     var step = +(!$scope.front); // change cards if on back
@@ -37,12 +43,6 @@ flashApp.controller("CardController", function ($scope) {
     $scope.front = true;
     $scope.cards.splice($scope.current, 1);
     $scope.current = $scope.current % $scope.cards.length;
-  };
-
-  $scope.reset = function() {
-    $scope.cards = [].concat(allCards);
-    $scope.front = true;
-    $scope.current = 0;
   };
 
 });
