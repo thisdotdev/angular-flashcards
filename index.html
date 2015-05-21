@@ -19,6 +19,11 @@
       <button ng-click="reset()">reset</button>
     </section>
     <section ng-controller="CardsController">
+      <label for="front">Front</label>
+      <textarea name="front" ng-model="front"></textarea>
+      <label for="back">Back</label>
+      <textarea name="back" ng-model="back"></textarea>
+      <button ng-click="addCard()">Add Card</button>
     </section>
     <script src="./app.js"></script>
   </body>
