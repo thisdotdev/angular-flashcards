@@ -1,13 +1,141 @@
+/********************************************
+Tag Resets
+********************************************/
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.clearfix {
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  background-color: #F4F0EA;
+
+}
+
+#wrapper {
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 500px;
+  backround-image
+}
+
+.schoolbell {
+  font-family: 'Schoolbell', cursive;
+  font-size: 20px;
+}
+
+h1, h2, h3 {
+  color:#3a788e;
+  margin: 20px 0;
+}
+
+h1 {
+font-size: 30px;
+}
 .card p {
   display: inline-block;
-  border: 2px red solid;
-  height: 100px;
-  width: 150px;
+  border: 1px #C0B8AB solid;
+  height: 200px;
+  width: 100%;
   text-align: center;
   vertical-align: middle;
   line-height: 100px;
+  background-color: #FFFFFF;
 }
 
 p.back {
-  border-color: blue;
+  border-color: #33697C;
+}
+
+.addcards {
+  margin-top: 40px;
+}
+
+label {
+   display: block;
+   padding: 14px 0 5px 0;
+ }
+
+button {
+  border: 0 none;
+  border-radius: 2px 2px 2px 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 7px 10px;
+  width: 100px;
+  text-align: center;
+  background-color: #33697C;
+  color: #FFFFFF;
+}
+
+button:hover {
+  background-color: #244a58;
+  color: #FFFFFF;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  border: 1px #C0B8AB solid;
+  font-size: 16px;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.075);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.addcard {
+  float: right;
+}
+
+@media screen and (max-width: 300px) {
+    #wrapper {
+      width: 200px;
+    }
 }

@@ -1,4 +1,5 @@
 var flashApp = angular.module('flash', []);
+
 flashApp.controller('DeckController',function($scope) {
 
   var allCards = [
@@ -62,13 +63,12 @@ flashApp.controller('StudyController',function ($scope) {
     $scope.current = ($scope.current % $scope.cards.length) || 0;
   };
 
- });
+});
 
- flashApp.controller('CardsController',function ($scope) {
-
+flashApp.controller('CardsController',function ($scope) {
    $scope.addCard = function() {
-
      $scope.$parent.addCard($scope.front, $scope.back);
+     $scope.front= '';
+     $scope.back= '';
      };
-
- });
+});
