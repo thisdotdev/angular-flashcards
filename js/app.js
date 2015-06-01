@@ -1,1 +1,2 @@
-var flashApp = angular.module("flash", ["flash.controllers"]);
+var flashApp = angular.module("flash",
+  ["flash.deck", "flash.study", "flash.cards"]);
