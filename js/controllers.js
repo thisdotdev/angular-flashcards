@@ -1,7 +1,6 @@
-var flashApp = angular.module("flash", []);
+var ctrlModule = angular.module("flash.controllers", []);
 
-flashApp.controller("DeckController", function ($scope) {
-
+ctrlModule.controller("DeckController", function ($scope) {
   var allCards = [
     { front: "how many licks?",
       back: "50"
@@ -28,7 +27,7 @@ flashApp.controller("DeckController", function ($scope) {
 
 });
 
-flashApp.controller("StudyController", function ($scope) {
+ctrlModule.controller("StudyController", function ($scope) {
 
   function init() {
     $scope.cards = $scope.$parent.refreshStudyDeck();
@@ -64,7 +63,7 @@ flashApp.controller("StudyController", function ($scope) {
 
 });
 
-flashApp.controller("CardsController", function($scope) {
+ctrlModule.controller("CardsController", function($scope) {
 
   $scope.addCard = function(){
     $scope.$parent.addCard($scope.front, $scope.back);
