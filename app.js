@@ -1,5 +1,6 @@
 var flashApp = angular.module("flash", []);
-flashApp.controller("CardController", function ($scope) {
+
+flashApp.controller("DeckController", function ($scope) {
 
   var allCards = [
     { front: "how many licks?",
@@ -13,8 +14,24 @@ flashApp.controller("CardController", function ($scope) {
     }
   ];
 
+  var studyDeck;
+
+  $scope.refreshStudyDeck = function () {
+    return studyDeck = [].concat(allCards);
+  };
+
+  $scope.addCard = function(front, back) {
+    var newCard = {front: front, back: back};
+    allCards.push(newCard);
+    studyDeck.push(newCard);
+  };
+
+});
+
+flashApp.controller("StudyController", function ($scope) {
+
   function init() {
-    $scope.cards = [].concat(allCards);
+    $scope.cards = $scope.$parent.refreshStudyDeck();
     $scope.front = true;
     $scope.current = 0;
   }
@@ -42,7 +59,16 @@ flashApp.controller("CardController", function ($scope) {
   $scope.gotIt = function() {
     $scope.front = true;
     $scope.cards.splice($scope.current, 1);
-    $scope.current = $scope.current % $scope.cards.length;
+    $scope.current = ($scope.current % $scope.cards.length) || 0;
+  };
+
+});
+
+flashApp.controller("CardsController", function($scope) {
+
+  $scope.addCard = function(){
+    $scope.$parent.addCard($scope.front, $scope.back);
+    $scope.front = $scope.back = "";
   };
 
 });
