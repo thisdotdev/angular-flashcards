@@ -34,15 +34,18 @@
 
   <section ng-controller="CardsController" class="addcards">
     <hr class="divider">
-  <h3>Make a Card</h3>
-  <label for="front">Front</label>
-  <textarea name="front" ng-model="front" cols="50" rows="3"></textarea>
-  <label for="back">Back</label>
-  <textarea name="back" ng-model="back" cols="50" rows="3"></textarea>
-  <button ng-click="addCard()" class="addcard">Add Card</button>
+    <h3>Make a Card</h3>
+    <label for="front">Front</label>
+    <textarea name="front" ng-model="front" cols="50" rows="3"></textarea>
+    <label for="back">Back</label>
+    <textarea name="back" ng-model="back" cols="50" rows="3"></textarea>
+    <button ng-click="addCard()" class="addcard">Add Card</button>
   </section>
 </section>
   <script src="./js/app.js"></script>
   <script src="./js/controllers.js"></script>
+  <script src="./js/card.js"></script>
+  <script src="./js/deck.js"></script>
+  <script src="./js/study.js"></script>
 </body>
 </html>
