@@ -1,4 +1,4 @@
-var deckModule = angular.module("flash.controllers.deck", []);
+var deckModule = angular.module("flash.deck", []);
 
 deckModule.controller('DeckController',function($scope) {
 
@@ -21,10 +21,12 @@ deckModule.controller('DeckController',function($scope) {
     return studyDeck;
   };
 
+  $scope.refreshStudyDeck();
+
   $scope.addCard = function (front,back) {
     var newCard = {front: front, back: back};
     allCards.push(newCard);
     studyDeck.push(newCard);
   };
 
-})
+});
