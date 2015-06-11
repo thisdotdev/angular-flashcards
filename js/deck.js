@@ -1,6 +1,6 @@
 var deckModule = angular.module("flash.deck", []);
 
-deckModule.controller('DeckController',function($scope) {
+deckModule.controller('DeckController', function($scope) {
 
   var allDecks = [
     {
@@ -27,16 +27,14 @@ deckModule.controller('DeckController',function($scope) {
     }
 ];
 
-var allCards = allDecks[0].cards;
-
   var studyDeck;
 
-  $scope.refreshStudyDeck = function () {
-    studyDeck = [].concat(allCards);
+  $scope.decks = allDecks;
+
+  $scope.refreshStudyDeck = function (deckNum) {
+    studyDeck = [].concat(allDecks[deckNum].cards);
     return studyDeck;
   };
-
-  $scope.refreshStudyDeck();
 
   $scope.addCard = function (front,back) {
     var newCard = {front: front, back: back};
@@ -44,6 +42,4 @@ var allCards = allDecks[0].cards;
     studyDeck.push(newCard);
   };
 
-  $scope.decks = allDecks;
-  
 });
