@@ -1,33 +1,19 @@
 <!doctype html>
+
 <html ng-app="flash">
+
   <head>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <script src="./lib/angular.min.js"></script>
+    <script src="./lib/angular-route.min.js"></script>
   </head>
+
   <body ng-controller="DeckController">
-    <section ng-controller="StudyController">
-      <div ng-if="cards.length" class="card">
-        <p ng-if="front" class="front">{{ cards[current].front }}</p>
-        <p ng-if="!front" class="back">{{ cards[current].back }}</p>
-      </div>
-      <p ng-if="!cards.length"> all gone </p>
-      <span ng-if="cards.length">
-        <button ng-click="back()">back</button>
-        <button ng-click="next()">next</button>
-        <button ng-click="gotIt()">got it!</button>
-      </span>
-      <button ng-click="reset()">reset</button>
-    </section>
-    <section ng-controller="CardsController">
-      <label for="front">Front</label>
-      <textarea name="front" ng-model="front"></textarea>
-      <label for="back">Back</label>
-      <textarea name="back" ng-model="back"></textarea>
-      <button ng-click="addCard()">Add Card</button>
-    </section>
+    <div ng-view></div>
     <script src="./js/app.js"></script>
     <script src="./js/deck.js"></script>
     <script src="./js/cards.js"></script>
     <script src="./js/study.js"></script>
   </body>
+
 </html>
