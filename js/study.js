@@ -1,7 +1,7 @@
-var studyModule = angular.module("flash.controllers.study", []);
+var studyModule = angular.module("flash.study", []);
 
 
-ctrlModule.controller('StudyController',function ($scope) {
+studyModule.controller('StudyController',function ($scope) {
 
   function init() {
     $scope.cards = $scope.$parent.refreshStudyDeck();
@@ -35,4 +35,4 @@ ctrlModule.controller('StudyController',function ($scope) {
     $scope.current = ($scope.current % $scope.cards.length) || 0;
   };
 
-})
+});
