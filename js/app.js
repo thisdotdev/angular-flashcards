@@ -12,7 +12,7 @@ var flashApp = angular.module('flash', [
     templateUrl: 'partials/study.html',
     controller: 'StudyController'
     })
-  .when("/add", {
+  .when("/add/:index", {
     templateUrl: 'partials/cards.html',
     controller: 'CardsController'
     });

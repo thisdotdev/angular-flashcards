@@ -36,9 +36,9 @@ deckModule.controller('DeckController', function($scope) {
     return studyDeck;
   };
 
-  $scope.addCard = function (front,back) {
+  $scope.addCard = function (front,back,deck) {
     var newCard = {front: front, back: back};
-    allCards.push(newCard);
+    allDecks[deck].cards.push(newCard);
     studyDeck.push(newCard);
   };
 
